@@ -1,4 +1,4 @@
-﻿using UnityEngine;
+using UnityEngine;
 using System.Collections;
 
 
@@ -42,6 +42,9 @@ public class DragItems : MonoBehaviour
 			GameObject go = new GameObject ("Rigidbody2D Dragger");
 			Rigidbody2D body = go.AddComponent <Rigidbody2D>() as Rigidbody2D;
 			springJoint = go.AddComponent <SpringJoint2D>() as SpringJoint2D;
+            springJoint.autoConfigureConnectedAnchor = false;
+            springJoint.autoConfigureDistance = false;
+            springJoint.frequency = frequency;
 			body.isKinematic = true;
 			body.mass=0.0001f;
 		}

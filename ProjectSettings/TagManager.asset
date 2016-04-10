@@ -17,7 +17,7 @@ TagManager:
   - Compost
   - Trash
   - Plastic
-  - 
+  - Drag
   - 
   - 
   - 
@@ -38,6 +38,15 @@ TagManager:
   - 
   - 
   m_SortingLayers:
+  - name: Background
+    uniqueID: 3572618359
+    locked: 0
   - name: Default
     uniqueID: 0
+    locked: 0
+  - name: Foreground
+    uniqueID: 3429790483
+    locked: 0
+  - name: Text
+    uniqueID: 903305607
     locked: 0

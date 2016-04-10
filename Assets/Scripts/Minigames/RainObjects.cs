@@ -4,15 +4,23 @@ using System.Collections;
 
 public class RainObjects : MonoBehaviour
 {
+    public static RainObjects rain_objects;
+
     public List<GameObject> objects_to_spawn = new List<GameObject>();
     public int number_of_initial_objects;
     public float spawn_rate = 0.3f;
     public float min_speed = 0.1f;
     public float max_speed = 0.4f;
 
+    public Transform world_canvas;
+
     float cur_spawn_rate;
     BoxCollider2D zone;
 
+    void Awake()
+    {
+        rain_objects = this;
+    }
     void Start()
     {
         zone = this.GetComponent<BoxCollider2D>();
@@ -39,7 +47,7 @@ public class RainObjects : MonoBehaviour
         cur_spawn_rate = spawn_rate;
 
         // Randomly choose an object to spawn
-        GameObject obj = objects_to_spawn[Random.Range(0, objects_to_spawn.Count - 1)];
+        GameObject obj = objects_to_spawn[Random.Range(0, objects_to_spawn.Count)];
 
         // Position it randomly with an area
         Vector2 pos = new Vector2(Random.Range(this.transform.position.x - (zone.bounds.size.x / 2f), (this.transform.position.x + (zone.bounds.size.x / 2f)))
