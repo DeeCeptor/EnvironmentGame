@@ -1,4 +1,4 @@
-﻿using UnityEngine;
+using UnityEngine;
 using System.Collections;
 
 
@@ -25,6 +25,8 @@ public class SetMusicNode : Node
             // If not fading out the previous background music, move the Child of this object that has the AudioSource
             // to be the child of MusicManager and have it play the AudioSource
             AudioManager.audio_manager.Set_Music(new_music);
+
+            Finish_Node();
 		}
 	}
 
