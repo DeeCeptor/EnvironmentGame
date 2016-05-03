@@ -27,10 +27,10 @@ public class ChoiceNode : Node
 		// Make buttons that have events visible, set their text,
 		// add call to Finis_Node() on the OnClick() listener and hook up the choices buttons to the events on this node
 		if (Button_1_Events.GetPersistentEventCount() > 0)
-		{
-			UIManager.ui_manager.choice_1_button.gameObject.SetActive(true);    // Make visible
+        {
+            Button_1_Events.AddListener(Clear_Choices); // Add call to finish this node and hide UI to event listener
+            UIManager.ui_manager.choice_1_button.gameObject.SetActive(true);    // Make visible
             UIManager.ui_manager.choice_1_button.GetComponentInChildren<Text>().text = button_1_text;	// Set button text
-			Button_1_Events.AddListener(Clear_Choices); // Add call to finish this node and hide UI to event listener
             UIManager.ui_manager.choice_1_button.onClick = Button_1_Events;	// Set events
 		}
         else
@@ -41,9 +41,9 @@ public class ChoiceNode : Node
 
         if (Button_2_Events.GetPersistentEventCount() > 0)
 		{
+            Button_2_Events.AddListener(Clear_Choices);
             UIManager.ui_manager.choice_2_button.gameObject.SetActive(true);
             UIManager.ui_manager.choice_2_button.GetComponentInChildren<Text>().text = button_2_text;
-			Button_2_Events.AddListener(Clear_Choices);
             UIManager.ui_manager.choice_2_button.onClick = Button_2_Events;
 		}
         else
@@ -87,21 +87,24 @@ public class ChoiceNode : Node
 
 	public void Clear_Choices()
 	{
-        // Remove event listeners from buttons
-        UIManager.ui_manager.choice_1_button.onClick = null;
-        UIManager.ui_manager.choice_2_button.onClick = null;
-        UIManager.ui_manager.choice_3_button.onClick = null;
-        UIManager.ui_manager.choice_4_button.onClick = null;
+        if (SceneManager.current_conversation.Get_Current_Node().GetType() != this.GetType())
+        {
+            // Remove event listeners from buttons
+            UIManager.ui_manager.choice_1_button.onClick = null;
+            UIManager.ui_manager.choice_2_button.onClick = null;
+            UIManager.ui_manager.choice_3_button.onClick = null;
+            UIManager.ui_manager.choice_4_button.onClick = null;
 
-        // Set all choice buttons to inactive
-        UIManager.ui_manager.choice_1_button.gameObject.SetActive(false);
-        UIManager.ui_manager.choice_2_button.gameObject.SetActive(false);
-        UIManager.ui_manager.choice_3_button.gameObject.SetActive(false);
-        UIManager.ui_manager.choice_4_button.gameObject.SetActive(false);
+            // Set all choice buttons to inactive
+            UIManager.ui_manager.choice_1_button.gameObject.SetActive(false);
+            UIManager.ui_manager.choice_2_button.gameObject.SetActive(false);
+            UIManager.ui_manager.choice_3_button.gameObject.SetActive(false);
+            UIManager.ui_manager.choice_4_button.gameObject.SetActive(false);
 
 
-		// Hide choice UI
-		UIManager.ui_manager.choice_panel.SetActive(false);
+            // Hide choice UI
+            UIManager.ui_manager.choice_panel.SetActive(false);
+        }
 	}
 
 

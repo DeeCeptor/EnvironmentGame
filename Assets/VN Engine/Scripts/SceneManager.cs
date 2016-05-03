@@ -62,9 +62,15 @@ public class SceneManager : MonoBehaviour
 	{
 		conversation.GetComponent<ConversationManager>().Start_Conversation();
 	}
+    public void Start_Conversation_If_Not_Null(GameObject conversation, GameObject start_if_null)
+    {
+        if (!conversation)
+            conversation.GetComponent<ConversationManager>().Start_Conversation();
+        else
+            start_if_null.GetComponent<ConversationManager>().Start_Conversation();
+    }
 
-
-	public void Add_To_Log(string heading, string text)
+    public void Add_To_Log(string heading, string text)
 	{
         if (!string.IsNullOrEmpty(heading))
             Conversation_log += heading + ": ";

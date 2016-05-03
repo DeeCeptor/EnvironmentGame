@@ -10,6 +10,10 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/MainMenu.unity
   - enabled: 1
-    path: Assets/Scenes/Game.unity
+    path: Assets/Scenes/Bedroom.unity
+  - enabled: 1
+    path: Assets/Scenes/CoastalNeighbourhood.unity
+  - enabled: 1
+    path: Assets/Scenes/SortingMinigame.unity
   - enabled: 1
     path: Assets/Scenes/Credits.unity

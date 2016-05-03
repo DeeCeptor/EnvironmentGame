@@ -8,7 +8,7 @@ public class ConversationManager : MonoBehaviour
 	private int cur_node = 0;   // Which node we are currently processing
 	private bool active = false;	// Set to true when this is current conversation
 
-    public bool destroy_when_finished = true;
+    public bool destroy_when_finished = false;
 
 	void Start () 
 	{
