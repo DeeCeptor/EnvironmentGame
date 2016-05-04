@@ -10,6 +10,7 @@ public class ExitAllActorsNode : Node
 
     public override void Run_Node()
     {
+        Debug.Log("EXIOT");
         if (!slide_out && !fade_out)
         {
             for (int x = ActorManager.actors_on_scene.Count - 1; x >= 0; x--)
@@ -38,9 +39,20 @@ public class ExitAllActorsNode : Node
             }
         }
 
-        Finish_Node();
+        StartCoroutine(Wait());
+        //Finish_Node();
     }
 
+
+    // Wait until the actor has left the scene
+    IEnumerator Wait()
+    {
+        while (ActorManager.actors_on_scene.Count > 0)
+        {
+            yield return new WaitForSeconds(0.1f);
+        }
+        Finish_Node();
+    }
 
     public override void Finish_Node()
     {

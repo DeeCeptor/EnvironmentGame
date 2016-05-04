@@ -46,7 +46,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 59ca6937d41114c4f8d9532b288dcbc8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  actor_name: Nimo
+  actor_name: Mrs. Pinkerton
   position: 0
   rect: {fileID: 0}
   desired_position: {x: 0, y: 0, z: 0}
@@ -99,7 +99,7 @@ MonoBehaviour:
       m_Calls: []
     m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
       Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
-  m_Sprite: {fileID: 21300000, guid: be00ee13e6f3df94baa84dfa14071175, type: 3}
+  m_Sprite: {fileID: 21300000, guid: cf86088a4f14fa2418d0cbeea322ccc0, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1

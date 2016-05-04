@@ -1,4 +1,4 @@
-﻿using UnityEngine;
+using UnityEngine;
 using System.Collections;
 
 public class ChangeConversationNode : Node 
@@ -24,6 +24,9 @@ public class ChangeConversationNode : Node
 	
     public void StartNewConversation()
     {
+        UIManager.ui_manager.speaker_text_panel.text = "";
+        UIManager.ui_manager.dialogue_text_panel.text = "";
+
         conversation_to_start.Start_Conversation();
         this.transform.GetComponentInParent<ConversationManager>().Finish_Conversation();
 

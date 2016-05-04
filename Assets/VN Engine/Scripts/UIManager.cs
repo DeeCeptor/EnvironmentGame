@@ -6,6 +6,8 @@ public class UIManager : MonoBehaviour
 {
 	public static UIManager ui_manager;
 
+    public Canvas canvas;
+
 	public Text dialogue_text_panel;
 	public Text speaker_text_panel;
 	public GameObject choice_panel;
@@ -20,7 +22,16 @@ public class UIManager : MonoBehaviour
     public Button choice_3_button;
     public Button choice_4_button;
 
+    public Sprite locked;
+    public Sprite unlocked;
+
     public GameObject actor_positions;
+
+    public Text Intellect;
+    public Text Resolve;
+    public Text Charm;
+    public Text Money;
+
 
     void Awake ()
     {

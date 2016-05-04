@@ -13,9 +13,12 @@ public class SetBackgroundTransparent : Node
 
 	public override void Run_Node()
 	{
-		activateImage();	// Ensure whatever image we're operating on is active
-		
-		if (!fade_in && !fade_out)// && !fade_out_then_in_background)
+		activateImage();    // Ensure whatever image we're operating on is active
+
+        UIManager.ui_manager.speaker_text_panel.text = "";
+        UIManager.ui_manager.dialogue_text_panel.text = "";
+
+        if (!fade_in && !fade_out)// && !fade_out_then_in_background)
 		{
 			// Simply set background and end if we aren't fading
 			UIManager.ui_manager.background.sprite = getImage().sprite;

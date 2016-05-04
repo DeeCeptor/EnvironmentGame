@@ -46,7 +46,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 59ca6937d41114c4f8d9532b288dcbc8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  actor_name: Nimo
+  actor_name: JamminBen
   position: 0
   rect: {fileID: 0}
   desired_position: {x: 0, y: 0, z: 0}

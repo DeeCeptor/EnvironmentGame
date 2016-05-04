@@ -9,7 +9,7 @@ public class DialogueNode : Node
 	[TextArea(3,10)]
 	public string text;
     private string processed_text;
-    public bool darken_all_other_characters = false;     // Darkens all other actors on the scene
+    bool darken_all_other_characters = true;     // Darkens all other actors on the scene
     public bool bring_speaker_to_front = true;      // Changes the ordering so this actor will be in front of others
 	public bool clear_text_after = false;
 
@@ -20,9 +20,18 @@ public class DialogueNode : Node
     [HideInInspector]
     public bool done_voice_clip = false; // Set to true when the voice clip accompanying this dialogue is done playing
     private bool running = false;   // Set true when Run_Node is called
-    
+
+    public bool skip_if_seen_before = false;
+    bool seen_before = false;
+
 	public override void Run_Node()
 	{
+        if (skip_if_seen_before && seen_before)
+        {
+            Finish_Node();
+            return;
+        }
+
         running = true;
 
         UIManager.ui_manager.dialogue_text_panel.text = "";
@@ -98,6 +107,7 @@ public class DialogueNode : Node
         done_printing = false;
         done_voice_clip = false;
         running = false;
+        seen_before = true;
         base.Finish_Node();
 	}
 
@@ -108,7 +118,7 @@ public class DialogueNode : Node
 	{
 		int i = 0;
         bool italics = false;
-		while(i < strComplete.Length)
+		while(i < strComplete.Length && running)
 		{
             if (!UIManager.ui_manager.entire_UI_panel.activeInHierarchy)
             {

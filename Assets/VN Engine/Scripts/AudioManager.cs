@@ -1,4 +1,4 @@
-﻿using UnityEngine;
+using UnityEngine;
 using System.Collections;
 
 public class AudioManager : MonoBehaviour
@@ -34,7 +34,6 @@ public class AudioManager : MonoBehaviour
     // Fades out the current background music over seconds_it_takes_to_fade_out
     public IEnumerator Fade_Out_Music(float seconds_it_takes_to_fade_out)
     {
-        
         if (background_music_audio_source != null)
         {
             while (background_music_audio_source.volume > 0)

@@ -26,7 +26,8 @@ public class ConversationManager : MonoBehaviour
 		// Set this conversation as active in the scene manager
 		SceneManager.current_conversation = this;
 
-		active = true;
+        cur_node = 0;
+        active = true;
 		Start_Node();	// Start the first conversation node
 	}
 

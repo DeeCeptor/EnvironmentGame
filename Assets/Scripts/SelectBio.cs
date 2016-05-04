@@ -26,9 +26,13 @@ public class SelectBio : MonoBehaviour
         Canvas.ForceUpdateCanvases();
         text_field_name.text = character_name;
         text_field_bio.text = character_bio;
-        text_field_age.text = "Age: " + age;
+        //text_field_age.text = "Age: " + age;
+        text_field_age.text = NimosStats.stats.RelationshipWith(character_name);
+
         text_image.sprite = profile_image;
         text_image.color = new Color(text_image.color.r, text_image.color.g, text_image.color.b, 255f);
+
+
 
         //text_field_bio.transform.parent.parent.GetComponent<ScrollRect>().verticalNormalizedPosition = 1;
         //text_field_bio.transform.parent.parent.GetComponent<ScrollRect>().verticalScrollbar.value = 1;

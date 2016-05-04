@@ -14,6 +14,13 @@ public class SetMusicNode : Node
 
 	public override void Run_Node()
 	{
+        if (new_music == AudioManager.audio_manager.background_music_audio_source.clip)
+        {
+            Debug.Log("Music is already playing");
+            Finish_Node();
+            return;
+        }
+
 		if (fadeOutPreviousMusic && AudioManager.audio_manager.background_music_audio_source.isPlaying)
 		{
 			// Fade out the previous background music for a smooth transition
