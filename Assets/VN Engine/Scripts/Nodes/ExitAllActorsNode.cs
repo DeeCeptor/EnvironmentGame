@@ -10,7 +10,6 @@ public class ExitAllActorsNode : Node
 
     public override void Run_Node()
     {
-        Debug.Log("EXIOT");
         if (!slide_out && !fade_out)
         {
             for (int x = ActorManager.actors_on_scene.Count - 1; x >= 0; x--)

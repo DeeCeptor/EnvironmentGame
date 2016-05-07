@@ -38,13 +38,12 @@ public class StatRequirement : IfElseThenModifier
             )
         {
             Unlocked();
-            button.onClick.AddListener(delegate { SceneManager.scene_manager.Start_Conversation_If_Not_Null(conversation_to_start_if_unlocked, main_conversation_is_null); });
+            button.onClick.AddListener(() => SceneManager.scene_manager.Start_Conversation_If_Not_Null(conversation_to_start_if_unlocked, main_conversation_is_null) );
         }
         else
         {
             Locked();
-
-            button.onClick.AddListener(delegate { SceneManager.scene_manager.Start_Conversation(conversation_if_locked.gameObject); });
+            button.onClick.AddListener(delegate { SceneManager.scene_manager.Start_Conversation(conversation_if_locked.gameObject); button.onClick.RemoveAllListeners(); button.gameObject.SetActive(false); button.gameObject.SetActive(true); } );
         }
         //our_button.onClick.AddListener(delegate { HideRequirements(); });
     }

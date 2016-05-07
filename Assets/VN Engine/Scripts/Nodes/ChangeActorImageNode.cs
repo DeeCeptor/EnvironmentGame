@@ -14,36 +14,44 @@ public class ChangeActorImageNode : Node
 
     public override void Run_Node()
     {
-        if (fade_in_new_image)
+        if (ActorManager.Is_Actor_On_Scene(actor_name))
         {
-            Actor actor = ActorManager.Get_Actor(actor_name);
-            Sprite old_sprite = actor.GetComponent<Image>().sprite;
+            if (fade_in_new_image)
+            {
+                Actor actor = ActorManager.Get_Actor(actor_name);
+                Sprite old_sprite = actor.GetComponent<Image>().sprite;
 
-            if (lighten_actor)
-                actor.Lighten();
-            if (bring_actor_to_front)
-                ActorManager.Bring_Actor_To_Front(actor);
+                if (lighten_actor)
+                    actor.Lighten();
+                if (bring_actor_to_front)
+                    ActorManager.Bring_Actor_To_Front(actor);
 
-            // Fade out old image
-            actor.fading_child_image.gameObject.SetActive(true);
-            actor.fading_child_image.sprite = old_sprite;
-            // Set colour of old image to match current image
-            actor.fading_child_image.color = actor.GetComponent<Image>().color;
-            actor.fading_child_image.GetComponent<RectTransform>().sizeDelta = actor.rect.sizeDelta;
-            StartCoroutine(Fade_Out_Coroutine(fade_out_time, actor.fading_child_image));
+                // Fade out old image
+                actor.fading_child_image.gameObject.SetActive(true);
+                actor.fading_child_image.sprite = old_sprite;
+                // Set colour of old image to match current image
+                actor.fading_child_image.color = actor.GetComponent<Image>().color;
+                actor.fading_child_image.GetComponent<RectTransform>().sizeDelta = actor.rect.sizeDelta;
+                StartCoroutine(Fade_Out_Coroutine(fade_out_time, actor.fading_child_image));
 
-            // Fade in new image
-            actor.GetComponent<Image>().sprite = new_image;
-            StartCoroutine(Fade_In_Coroutine(fade_out_time, actor.GetComponent<Image>()));
+                // Fade in new image
+                actor.GetComponent<Image>().sprite = new_image;
+                StartCoroutine(Fade_In_Coroutine(fade_out_time, actor.GetComponent<Image>()));
 
-            // Wait before we allow it to finish
-			StartCoroutine(Wait(actor, fade_out_time*2f));
+                // Wait before we allow it to finish
+                StartCoroutine(Wait(actor, fade_out_time * 2f));
+            }
+            else
+            {
+                ActorManager.Get_Actor(actor_name).GetComponent<Image>().sprite = new_image;
+                Finish_Node();
+            }
         }
         else
         {
-            ActorManager.Get_Actor(actor_name).GetComponent<Image>().sprite = new_image;
-
             Finish_Node();
+
+            Debug.Log(actor_name + " is not on the scene. Remember to correctly name your actor and use 'EnterActorNode'");
         }
     }
 

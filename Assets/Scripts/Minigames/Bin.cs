@@ -39,7 +39,7 @@ public class Bin : MonoBehaviour
             // Set colours and text
             Color[] colors = { Color.green, Color.blue, Color.yellow };
             obj.GetComponent<Text>().color = colors[Random.Range(0, colors.Length)];
-            string[] texts = { "Great!", "Nice", "Keep going!", "Boo ya!" };
+            string[] texts = { "Great!", "Nice", "Boo ya!" };
             obj.GetComponent<Text>().text = texts[Random.Range(0, texts.Length)];
 
             Score.score.UpdateScore(1);
@@ -56,6 +56,8 @@ public class Bin : MonoBehaviour
             Score.score.UpdateScore(-1);
         }
 
-        Destroy(other.gameObject);
+        // Make it shrink
+        other.gameObject.GetComponent<Rigidbody2D>().isKinematic = true;
+        other.gameObject.AddComponent<ShrinkObject>();
     }
 }

@@ -6,9 +6,10 @@ public class Pause : MonoBehaviour
 {
     public static Pause pause;
 
+    public bool can_pause = true;
     public GameObject pause_menu;   // Must be assigned for pausing to work
     public GameObject options_menu; // Must be assigned for options to be displayed
-
+    public string level_to_load = "MainMenu";
     public string toggle_pause_key = "Pause";
 
     [HideInInspector]
@@ -50,7 +51,7 @@ public class Pause : MonoBehaviour
 
     void Update ()
     {
-        if (Input.GetButtonDown(toggle_pause_key))
+        if (Input.GetButtonDown(toggle_pause_key) && can_pause)
             Toggle_Pause();
 	}
 }

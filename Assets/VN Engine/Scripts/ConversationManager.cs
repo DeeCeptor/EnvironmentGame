@@ -18,13 +18,13 @@ public class ConversationManager : MonoBehaviour
 
 	// Simply start the first node to get this conversation going
 	public void Start_Conversation()
-	{
+    {
+        // Set this conversation as active in the scene manager
+        SceneManager.current_conversation = this;
+
         if (UIManager.ui_manager.entire_UI_panel != null &&
             !UIManager.ui_manager.entire_UI_panel.activeSelf)   // Show conversation panel when you click on stuff to examine
             UIManager.ui_manager.entire_UI_panel.SetActive(true);
-
-		// Set this conversation as active in the scene manager
-		SceneManager.current_conversation = this;
 
         cur_node = 0;
         active = true;

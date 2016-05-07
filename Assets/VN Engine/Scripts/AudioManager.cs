@@ -1,5 +1,6 @@
 using UnityEngine;
 using System.Collections;
+using UnityEngine.UI;
 
 public class AudioManager : MonoBehaviour
 {
@@ -13,22 +14,41 @@ public class AudioManager : MonoBehaviour
     // Volume controls
     [HideInInspector]
     public float master_volume = 1;
-    [HideInInspector]
-    public float music_volume = 1;
+    public float music_volume = 1f;
     [HideInInspector]
     public float voice_volume = 1;
     [HideInInspector]
     public float effects_volume = 1;
 
+    public Slider music_volume_sliders;
+    public Slider effects_volume_sliders;
+    public Slider voice_volume_sliders;
+
 
     void Awake ()
     {
         audio_manager = this;
+
+        music_volume = background_music_audio_source.volume;
+        voice_volume = voice_audio_source.volume;
+        SetVolumeSliders();
     }
-	void Start ()
+    void Start ()
     {
 	
 	}
+
+
+    public void SetVolumeSliders()
+    {
+        if (music_volume_sliders)
+        {
+            Canvas.ForceUpdateCanvases();
+            music_volume_sliders.value = music_volume;
+            voice_volume_sliders.value = voice_volume;
+            Canvas.ForceUpdateCanvases();
+        }
+    }
 
 
     // Fades out the current background music over seconds_it_takes_to_fade_out
@@ -48,7 +68,7 @@ public class AudioManager : MonoBehaviour
     public void Set_Music(AudioClip new_music)
     {
         background_music_audio_source.clip = new_music;
-        background_music_audio_source.volume = 1;
+        background_music_audio_source.volume = music_volume;
         background_music_audio_source.loop = true;
         background_music_audio_source.Play();
     }

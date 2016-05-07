@@ -15,8 +15,10 @@ public class SetBackgroundTransparent : Node
 	{
 		activateImage();    // Ensure whatever image we're operating on is active
 
-        UIManager.ui_manager.speaker_text_panel.text = "";
-        UIManager.ui_manager.dialogue_text_panel.text = "";
+        if (UIManager.ui_manager.speaker_text_panel)
+            UIManager.ui_manager.speaker_text_panel.text = "";
+        if (UIManager.ui_manager.dialogue_text_panel)
+            UIManager.ui_manager.dialogue_text_panel.text = "";
 
         if (!fade_in && !fade_out)// && !fade_out_then_in_background)
 		{

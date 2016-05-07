@@ -32,11 +32,15 @@ public class DialogueNode : Node
             return;
         }
 
+        if (running || (running))
+            return;
+        seen_before = true;
         running = true;
 
         UIManager.ui_manager.dialogue_text_panel.text = "";
 		UIManager.ui_manager.speaker_text_panel.text = textbox_title;
-		StartCoroutine(Animate_Text(text, VNProperties.delay_per_character));
+        StopAllCoroutines();
+        StartCoroutine(Animate_Text(text, VNProperties.delay_per_character));
         processed_text = ProcessEntireDialogue(text);
 
         // If the actor field is filled in and the actor is present on the scene
@@ -96,14 +100,14 @@ public class DialogueNode : Node
 
 		StopAllCoroutines();
 
-		if (clear_text_after)
+        if (clear_text_after)
 		{
 			UIManager.ui_manager.speaker_text_panel.text = "";
 			UIManager.ui_manager.dialogue_text_panel.text = "";
 		}
-
-		// Record what was said in the log so players can go back and read anything they missed
-		SceneManager.scene_manager.Add_To_Log(textbox_title, processed_text + "\n");
+        NimosStats.stats.dialogues_printing--;
+        // Record what was said in the log so players can go back and read anything they missed
+        SceneManager.scene_manager.Add_To_Log(textbox_title, processed_text + "\n");
         done_printing = false;
         done_voice_clip = false;
         running = false;
@@ -111,22 +115,25 @@ public class DialogueNode : Node
         base.Finish_Node();
 	}
 
+    string text_this_instant;
 
-	// Prints the text to the UI manager's dialogue text one character at a time.
-	// It waits time_between_characters seconds before adding on the next character.
-	public IEnumerator Animate_Text(string strComplete, float time_between_characters) 
-	{
-		int i = 0;
+    // Prints the text to the UI manager's dialogue text one character at a time.
+    // It waits time_between_characters seconds before adding on the next character.
+    public IEnumerator Animate_Text(string strComplete, float time_between_characters)
+    {
+        int i = 0;
         bool italics = false;
-		while(i < strComplete.Length && running)
-		{
+        text_this_instant = "";
+
+        while (i < strComplete.Length && running)
+        {
             if (!UIManager.ui_manager.entire_UI_panel.activeInHierarchy)
             {
                 done_printing = true;
             }
 
             bool ignore = false;
-            char next_char = (char) strComplete[i++];   // Next character to be printed
+            char next_char = (char)strComplete[i++];   // Next character to be printed
 
             // Check for italics
             switch (next_char)
@@ -140,13 +147,16 @@ public class DialogueNode : Node
             if (ignore)
                 continue;
             if (!italics)    // Regular text
-                UIManager.ui_manager.dialogue_text_panel.text += next_char;
+                text_this_instant += next_char;
             else if (italics)    // Italics text
-                UIManager.ui_manager.dialogue_text_panel.text += "<i>" + next_char + "</i>";
+                text_this_instant += "<i>" + next_char + "</i>";
+
+            UIManager.ui_manager.dialogue_text_panel.text = text_this_instant;
 
             if (SceneManager.text_scroll_speed != 0)
-			    yield return new WaitForSeconds(SceneManager.text_scroll_speed);
-		}
+                yield return new WaitForSeconds(SceneManager.text_scroll_speed);
+        }
+        
 		done_printing = true;
 	}
 

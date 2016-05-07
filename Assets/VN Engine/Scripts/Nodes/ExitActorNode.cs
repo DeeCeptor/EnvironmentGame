@@ -11,27 +11,36 @@ public class ExitActorNode : Node
 
     public override void Run_Node()
     {
-        if (!slide_out && !fade_out)
+        if (ActorManager.Is_Actor_On_Scene(actor_name))
         {
-            ActorManager.Remove_Actor(actor_name);
-            Finish_Node();
-        }
-        else
-        {
-            Actor actor = ActorManager.Get_Actor(actor_name);
-
-            if (fade_out)
+            if (!slide_out && !fade_out)
             {
-                // Fade out
-                actor.Fade_Out(1f);
+                ActorManager.Remove_Actor(actor_name);
+                Finish_Node();
             }
             else
             {
-                // Slide out
-                actor.Slide_Out(1f);
-            }
+                Actor actor = ActorManager.Get_Actor(actor_name);
 
-            StartCoroutine(Wait(actor));
+                if (fade_out)
+                {
+                    // Fade out
+                    actor.Fade_Out(1f);
+                }
+                else
+                {
+                    // Slide out
+                    actor.Slide_Out(1f);
+                }
+
+                StartCoroutine(Wait(actor));
+            }
+        }
+        else
+        {
+            Debug.Log(actor_name + " is not on the scene. Remember to correctly name your actor and use 'EnterActorNode'");
+
+            Finish_Node();
         }
     }
 

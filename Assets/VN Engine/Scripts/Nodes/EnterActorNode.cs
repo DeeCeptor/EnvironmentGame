@@ -17,7 +17,6 @@ public class EnterActorNode : Node
 		if (ActorManager.Is_Actor_On_Scene(actor_name))
 		{
             // Actor is already on the scene
-            Debug.Log("Actor already on scene");
             Finish_Node();
             return;
 			//actor_script = ActorManager.Get_Actor(actor_name).GetComponent<Actor>();

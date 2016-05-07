@@ -10,6 +10,10 @@ public class Score : MonoBehaviour
     string pre_score = "Score: ";
     public int score_number;
 
+    public int goal;
+    bool victory = false;
+    public Text goal_text;
+
     void Awake ()
     {
         score = this;
@@ -23,6 +27,21 @@ public class Score : MonoBehaviour
         score_number += amount;
 
         score_text.text = pre_score + score_number;
+
+        if (score_number >= goal && !victory)
+        {
+            victory = true;
+            StartCoroutine(Victory());
+        }
+    }
+
+    public IEnumerator Victory()
+    {
+        goal_text.gameObject.SetActive(true);
+
+        yield return new WaitForSeconds(4.0f);
+
+        UnityEngine.SceneManagement.SceneManager.LoadScene("Finale");
     }
 
 

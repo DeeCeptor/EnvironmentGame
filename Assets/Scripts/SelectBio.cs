@@ -36,7 +36,7 @@ public class SelectBio : MonoBehaviour
 
         //text_field_bio.transform.parent.parent.GetComponent<ScrollRect>().verticalNormalizedPosition = 1;
         //text_field_bio.transform.parent.parent.GetComponent<ScrollRect>().verticalScrollbar.value = 1;
-        text_field_bio.transform.parent.parent.GetComponent<ScrollRect>().velocity = new Vector2(0f, -1000f);
+        //text_field_bio.transform.parent.GetComponent<ScrollRect>().velocity = new Vector2(0f, -1000f);
         Canvas.ForceUpdateCanvases();
     }
 }

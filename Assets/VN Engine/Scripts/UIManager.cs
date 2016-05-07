@@ -32,11 +32,22 @@ public class UIManager : MonoBehaviour
     public Text Charm;
     public Text Money;
 
+    public GameObject Ideas;
+    public Button Select_Ideas_Button;
+    public SelectIdeaNode current_idea_node;
+    public string selected_idea = "";
 
     void Awake ()
     {
 		ui_manager = this;
 	}
+
+
+    public void SelectIdea()
+    {
+        if (selected_idea != "")
+            current_idea_node.IdeaSelected(selected_idea);
+    }
 
 
     void Update ()

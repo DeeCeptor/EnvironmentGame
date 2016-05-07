@@ -56,18 +56,32 @@ public class SceneManager : MonoBehaviour
         }
     }
 
+    public void dooba()
+    {
 
+    }
 	// Pass in the game object that contains a 'ConversationManager' script to start
 	public void Start_Conversation(GameObject conversation)
 	{
-		conversation.GetComponent<ConversationManager>().Start_Conversation();
+        if (conversation)// && conversation.GetComponent<ConversationManager>() != current_conversation)
+        {
+            conversation.GetComponent<ConversationManager>().Start_Conversation();
+        }
+        else
+        {
+            Debug.Log("Couldn't start conversation");
+        }
 	}
     public void Start_Conversation_If_Not_Null(ConversationManager conversation, ConversationManager start_if_null)
     {
         if (conversation)
+        {
             conversation.Start_Conversation();
+        }
         else
+        {
             start_if_null.Start_Conversation();
+        }
     }
 
     public void Add_To_Log(string heading, string text)

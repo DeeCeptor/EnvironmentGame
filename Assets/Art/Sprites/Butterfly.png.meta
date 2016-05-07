@@ -1,0 +1,420 @@
+fileFormatVersion: 2
+guid: 09aef1e6c1055a7409e117ab7b3ee545
+timeCreated: 1462402612
+licenseType: Free
+TextureImporter:
+  fileIDToRecycleName:
+    21300000: Butterfly_0
+    21300002: Butterfly_1
+    21300004: Butterfly_2
+    21300006: Butterfly_3
+    21300008: Butterfly_4
+    21300010: Butterfly_5
+    21300012: Butterfly_6
+    21300014: Butterfly_7
+    21300016: Butterfly_8
+    21300018: Butterfly_9
+    21300020: Butterfly_10
+    21300022: Butterfly_11
+    21300024: Butterfly_12
+    21300026: Butterfly_13
+    21300028: Butterfly_14
+    21300030: Butterfly_15
+    21300032: Butterfly_16
+    21300034: Butterfly_17
+    21300036: Butterfly_18
+    21300038: Butterfly_19
+  serializedVersion: 2
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 1
+    linearTexture: 0
+    correctGamma: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+  isReadable: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 0
+  cubemapConvolution: 0
+  cubemapConvolutionSteps: 7
+  cubemapConvolutionExponent: 1.5
+  seamlessCubemap: 0
+  textureFormat: -1
+  maxTextureSize: 2048
+  textureSettings:
+    filterMode: 0
+    aniso: 16
+    mipBias: -1
+    wrapMode: 1
+  nPOTScale: 0
+  lightmap: 0
+  rGBM: 0
+  compressionQuality: 50
+  allowsAlphaSplitting: 0
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spritePixelsToUnits: 100
+  alphaIsTransparency: 1
+  textureType: 8
+  buildTargetSettings: []
+  spriteSheet:
+    sprites:
+    - name: Butterfly_0
+      rect:
+        serializedVersion: 2
+        x: 20
+        y: 72
+        width: 45
+        height: 40
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -2.5, y: 20}
+        - {x: -22.5, y: 20}
+        - {x: -22.5, y: -13}
+        - {x: -20.5, y: -18}
+        - {x: -7.5, y: -20}
+        - {x: 12.5, y: -20}
+        - {x: 15.5, y: -18}
+        - {x: 22.5, y: 3}
+        - {x: 22.5, y: 17}
+    - name: Butterfly_1
+      rect:
+        serializedVersion: 2
+        x: 93
+        y: 73
+        width: 39
+        height: 39
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -19.5, y: 19.5}
+        - {x: -19.5, y: -19.5}
+        - {x: 16.5, y: -19.5}
+        - {x: 19.5, y: -14.5}
+        - {x: 19.5, y: 17.5}
+        - {x: 17.5, y: 19.5}
+    - name: Butterfly_2
+      rect:
+        serializedVersion: 2
+        x: 166
+        y: 73
+        width: 33
+        height: 38
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -16.5, y: 19}
+        - {x: -16.5, y: -16}
+        - {x: -9.5, y: -19}
+        - {x: 8.5, y: -19}
+        - {x: 11.5, y: -17}
+        - {x: 16.5, y: -2}
+        - {x: 16.5, y: 19}
+    - name: Butterfly_3
+      rect:
+        serializedVersion: 2
+        x: 238
+        y: 74
+        width: 28
+        height: 37
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: Butterfly_4
+      rect:
+        serializedVersion: 2
+        x: 310
+        y: 74
+        width: 23
+        height: 37
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: Butterfly_5
+      rect:
+        serializedVersion: 2
+        x: 378
+        y: 74
+        width: 28
+        height: 37
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: Butterfly_6
+      rect:
+        serializedVersion: 2
+        x: 446
+        y: 74
+        width: 33
+        height: 37
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -16.5, y: 18.5}
+        - {x: -16.5, y: -16.5}
+        - {x: -15.5, y: -18.5}
+        - {x: 9.5, y: -18.5}
+        - {x: 16.5, y: 0.5}
+        - {x: 16.5, y: 18.5}
+    - name: Butterfly_7
+      rect:
+        serializedVersion: 2
+        x: 513
+        y: 74
+        width: 39
+        height: 38
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -19.5, y: 19}
+        - {x: -19.5, y: -15}
+        - {x: -18.5, y: -18}
+        - {x: -13.5, y: -19}
+        - {x: 9.5, y: -19}
+        - {x: 14.5, y: -11}
+        - {x: 19.5, y: 1}
+        - {x: 19.5, y: 19}
+    - name: Butterfly_8
+      rect:
+        serializedVersion: 2
+        x: 580
+        y: 73
+        width: 45
+        height: 39
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: 7.5, y: 17.5}
+        - {x: 0.5, y: 19.5}
+        - {x: -22.5, y: 19.5}
+        - {x: -22.5, y: -19.5}
+        - {x: 17.5, y: -19.5}
+        - {x: 21.5, y: -0.5}
+        - {x: 22.5, y: 3.5}
+        - {x: 22.5, y: 18.5}
+    - name: Butterfly_9
+      rect:
+        serializedVersion: 2
+        x: 649
+        y: 73
+        width: 48
+        height: 38
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -24, y: 19}
+        - {x: -24, y: -19}
+        - {x: 17, y: -19}
+        - {x: 24, y: 5}
+        - {x: 24, y: 19}
+    - name: Butterfly_10
+      rect:
+        serializedVersion: 2
+        x: 17
+        y: 7
+        width: 51
+        height: 37
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -25.5, y: 18.5}
+        - {x: -25.5, y: -18.5}
+        - {x: 19.5, y: -18.5}
+        - {x: 21.5, y: -17.5}
+        - {x: 25.5, y: -5.5}
+        - {x: 25.5, y: 18.5}
+    - name: Butterfly_11
+      rect:
+        serializedVersion: 2
+        x: 86
+        y: 6
+        width: 53
+        height: 37
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -26.5, y: 18.5}
+        - {x: -26.5, y: -16.5}
+        - {x: -22.5, y: -18.5}
+        - {x: 19.5, y: -18.5}
+        - {x: 26.5, y: 0.5}
+        - {x: 26.5, y: 17.5}
+        - {x: 24.5, y: 18.5}
+    - name: Butterfly_12
+      rect:
+        serializedVersion: 2
+        x: 157
+        y: 7
+        width: 48
+        height: 38
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -24, y: 19}
+        - {x: -24, y: -14}
+        - {x: -21, y: -19}
+        - {x: 21, y: -19}
+        - {x: 24, y: -14}
+        - {x: 24, y: 19}
+    - name: Butterfly_13
+      rect:
+        serializedVersion: 2
+        x: 228
+        y: 8
+        width: 43
+        height: 40
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: 8.5, y: 17}
+        - {x: -1.5, y: 20}
+        - {x: -21.5, y: 20}
+        - {x: -21.5, y: -15}
+        - {x: -17.5, y: -19}
+        - {x: -10.5, y: -20}
+        - {x: 14.5, y: -20}
+        - {x: 21.5, y: -4}
+        - {x: 21.5, y: 18}
+        - {x: 13.5, y: 18}
+    - name: Butterfly_14
+      rect:
+        serializedVersion: 2
+        x: 299
+        y: 9
+        width: 38
+        height: 41
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -19, y: 20.5}
+        - {x: -19, y: -15.5}
+        - {x: -18, y: -19.5}
+        - {x: -14, y: -20.5}
+        - {x: 14, y: -20.5}
+        - {x: 19, y: -6.5}
+        - {x: 19, y: 20.5}
+    - name: Butterfly_15
+      rect:
+        serializedVersion: 2
+        x: 370
+        y: 8
+        width: 40
+        height: 41
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: 20, y: 20.5}
+        - {x: -20, y: 20.5}
+        - {x: -20, y: -20.5}
+        - {x: 11, y: -20.5}
+        - {x: 16, y: -11.5}
+        - {x: 20, y: 1.5}
+    - name: Butterfly_16
+      rect:
+        serializedVersion: 2
+        x: 440
+        y: 8
+        width: 42
+        height: 40
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -21, y: 20}
+        - {x: -21, y: -20}
+        - {x: 16, y: -20}
+        - {x: 21, y: -16}
+        - {x: 21, y: 20}
+    - name: Butterfly_17
+      rect:
+        serializedVersion: 2
+        x: 510
+        y: 7
+        width: 45
+        height: 40
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -2.5, y: 20}
+        - {x: -22.5, y: 20}
+        - {x: -22.5, y: -13}
+        - {x: -20.5, y: -18}
+        - {x: -7.5, y: -20}
+        - {x: 12.5, y: -20}
+        - {x: 15.5, y: -18}
+        - {x: 22.5, y: 3}
+        - {x: 22.5, y: 17}
+    - name: Butterfly_18
+      rect:
+        serializedVersion: 2
+        x: 580
+        y: 7
+        width: 45
+        height: 40
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -2.5, y: 20}
+        - {x: -22.5, y: 20}
+        - {x: -22.5, y: -13}
+        - {x: -20.5, y: -18}
+        - {x: -7.5, y: -20}
+        - {x: 12.5, y: -20}
+        - {x: 15.5, y: -18}
+        - {x: 22.5, y: 3}
+        - {x: 22.5, y: 17}
+    - name: Butterfly_19
+      rect:
+        serializedVersion: 2
+        x: 650
+        y: 7
+        width: 45
+        height: 40
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -2.5, y: 20}
+        - {x: -22.5, y: 20}
+        - {x: -22.5, y: -13}
+        - {x: -20.5, y: -18}
+        - {x: -7.5, y: -20}
+        - {x: 12.5, y: -20}
+        - {x: 15.5, y: -18}
+        - {x: 22.5, y: 3}
+        - {x: 22.5, y: 17}
+    outline: []
+  spritePackingTag: 
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

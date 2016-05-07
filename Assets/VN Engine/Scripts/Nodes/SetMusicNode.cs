@@ -16,7 +16,6 @@ public class SetMusicNode : Node
 	{
         if (new_music == AudioManager.audio_manager.background_music_audio_source.clip)
         {
-            Debug.Log("Music is already playing");
             Finish_Node();
             return;
         }

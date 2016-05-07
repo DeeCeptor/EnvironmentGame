@@ -26,6 +26,19 @@ public class NimosStats : MonoBehaviour
     public GameObject bucket;
     public GameObject recycling_saves;
 
+    public int dialogues_printing = 0;
+    public bool Can_Start_Printing()
+    {
+        return true;
+        /*
+        if (dialogues_printing < 1)
+        {
+            dialogues_printing++;
+            return true;
+        }
+        else
+            return false;*/
+    }
 
     public bool HasItemIdea(string name)
     {
